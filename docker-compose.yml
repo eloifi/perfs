@@ -1,0 +1,18 @@
+services:
+  #perf-dashboard:
+  #  build:
+  #    context: ./perf-dashboard
+  #    dockerfile: Dockerfile
+  #  ports:
+  #    - "4200:80"
+  #  depends_on:
+  #    - perf-api
+
+  perf-api:
+    build:
+      context: ./perf-api
+      dockerfile: Dockerfile
+    volumes:
+    - /Users/eloifi/repos/way2home/way2home-java/.scripts/autocomplete-perfs/results:/results-root
+    ports:
+      - "4000:4000"
